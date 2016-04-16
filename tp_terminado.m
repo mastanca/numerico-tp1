@@ -17,11 +17,15 @@ A = A + B;
 
 v = [180,100,100,100,100,100,100,180,60,100,200,200,200,200,0,60,40,200,200,40,20,200,200,20,0,200,200,0,0,200,200,0,0,0,200,200,200,200,0,0,0,0,0,0,0,0,0,0] * (-1);
 v = transpose(v);
+
+# Calculate by direct method
 xDirecto = A\v;
 
+# Calculate by Jacobi method
 xJacobi = zeros(size(A,1),1);
 xJacobi = Jacobi(A,v,0.000000001);
 
+# Calculate by Gauss-Seidel method
 xGS = zeros(columns(A));
 tolerance = 10^(-3);
 xGS = gaussSeidel(A,v,tolerance);

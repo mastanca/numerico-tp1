@@ -10,11 +10,11 @@ function [ res ] = gaussSeidel(A, b, tolerance)
     D = diag(diag(A));
     L=(tril(A)-D)*-1;
     U=(triu(A)-D)*-1;
-    D - L;
-    inv(D-L);
-    (inv(D-L))*U;
-    Tg = ((D-L)^-1)*U;
-    Cg = ((D-L)^-1)*b;
+    W = D-L;
+    inv(W);
+    (inv(W))*U;
+    Tg = ((W)^-1)*U;
+    Cg = ((W)^-1)*b;
     eig(Tg);
     abs(eig(Tg));
     max(abs(eig(Tg)));

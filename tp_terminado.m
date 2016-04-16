@@ -21,13 +21,14 @@ v = transpose(v);
 # Calculate by direct method
 xDirecto = A\v;
 
+tolerance = 10^(-3);
+
 # Calculate by Jacobi method
 xJacobi = zeros(size(A,1),1);
-xJacobi = Jacobi(A,v,0.000000001);
+xJacobi = Jacobi(A,v,tolerance);
 
 # Calculate by Gauss-Seidel method
 xGS = zeros(columns(A));
-tolerance = 10^(-3);
 xGS = gaussSeidel(A,v,tolerance);
 
 

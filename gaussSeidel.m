@@ -1,5 +1,6 @@
 function [ res ] = gaussSeidel(A, b, tolerance)
     columnsOfA = columns(A);
+    iterationCounter = 0;
     for i = 1 : columnsOfA
       # We use 100 as initial estimation
       x(i)= 100;
@@ -19,11 +20,13 @@ function [ res ] = gaussSeidel(A, b, tolerance)
     abs(eig(Tg));
     max(abs(eig(Tg)));
     while E > tolerance
+      iterationCounter = iterationCounter + 1;
       aux=x;
       x = (Tg*(x)) + Cg;
       E = max(abs(x-aux));
     end
     if E < tolerance
         res = x;
+        fprintf('Gauss-Seidel converged in %d iterations \n', iterationCounter)
     end
 end

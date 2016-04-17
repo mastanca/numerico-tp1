@@ -18,7 +18,7 @@ function [ res ] = gaussSeidel(A, b, tolerance)
     Cg = ((W)^-1)*b;
     eig(Tg);
     abs(eig(Tg));
-    max(abs(eig(Tg)));
+    norm((eig(Tg)),inf);
     while E > tolerance
       iterationCounter = iterationCounter + 1;
       aux=x;

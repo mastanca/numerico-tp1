@@ -24,8 +24,8 @@ xDirecto = A\v;
 tolerance = 10^(-3);
 
 # Calculate by Jacobi method
-xJacobi = zeros(size(A,1),1);
-xJacobi = Jacobi(A,v,tolerance);
+xJacobi = zeros(columns(A));
+xJacobi = jacobi(A,v,tolerance);
 
 # Calculate by Gauss-Seidel method
 xGS = zeros(columns(A));
@@ -33,5 +33,5 @@ xGS = gaussSeidel(A,v,tolerance);
 
 
 straightSolution = transpose(xDirecto)
-jacobiSolution = transpose(xJacobi)
+jacobiSolution = (xJacobi)
 gaussSeidelSolution = transpose(xGS)

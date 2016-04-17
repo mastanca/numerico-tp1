@@ -23,7 +23,7 @@ function [ res ] = gaussSeidel(A, b, tolerance)
       iterationCounter = iterationCounter + 1;
       aux=x;
       x = (Tg*(x)) + Cg;
-      E = max(abs(x-aux));
+      E = norm((x-aux),inf);
     end
     if E < tolerance
         res = x;

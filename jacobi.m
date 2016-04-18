@@ -1,4 +1,4 @@
-function [ ret ] = jacobi (A, b, tolerance)
+function [ result ] = jacobi (A, b, tolerance)
     columnsOfA = columns(A);
     # Get number of iterations to compare methods
     iterationsCounter = 0;
@@ -30,7 +30,7 @@ function [ ret ] = jacobi (A, b, tolerance)
     end
     # If error is less than than tolerance then we found our result
     if E < tolerance
-      ret = x0;		
+      result = x0;		
       fprintf('Jacobi converged in %d iterations \n', iterationsCounter)
     end
 

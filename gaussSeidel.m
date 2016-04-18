@@ -1,4 +1,4 @@
-function [ res ] = gaussSeidel(A, b, tolerance)
+function [ result ] = gaussSeidel(A, b, tolerance)
     columnsOfA = columns(A);
     # Count the iterations to compare with other methods
     iterationCounter = 0;
@@ -34,7 +34,7 @@ function [ res ] = gaussSeidel(A, b, tolerance)
     end
     # If error is less than tolerance we found our solution
     if E < tolerance
-        res = x;
+        result = x;
         fprintf('Gauss-Seidel converged in %d iterations \n', iterationCounter)
     end
 end

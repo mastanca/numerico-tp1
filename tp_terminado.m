@@ -35,3 +35,18 @@ xGS = gaussSeidel(A,v,tolerance);
 straightSolution = transpose(xDirecto)
 jacobiSolution = (xJacobi)
 gaussSeidelSolution = transpose(xGS)
+
+M = getFinalMatrix(A, straightSolution*-1);
+# Calculate matrix M and plot it with contour
+contour(M)
+
+M = getFinalMatrix(A, jacobiSolution*-1);
+# Calculate matrix M and plot it with contour
+contour(M)
+
+M = getFinalMatrix(A, straightSolution*-1);
+# Calculate matrix M and plot it with contour
+contour(M)
+
+
+

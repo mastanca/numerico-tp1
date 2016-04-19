@@ -1,4 +1,6 @@
-A = zeros(56,56)
+problemMatrix = getProblemMatrix(zeros(11,11));
+problemMatrix
+A = zeros(56,56);
 # Loading lower diagonal matrix;
 # Use 2 (4/2) to avoid the sum of the diagonal when transposing
 A(1:57:end) = 2;
@@ -39,15 +41,15 @@ gaussSeidelSolution = transpose(xGS)
 
 
 # Remove the ; to get the figure
-M = getFinalMatrix(A, straightSolution*-1);
+M = getFinalMatrix(problemMatrix, straightSolution*-1);
 # Calculate matrix M and plot it with contour
 contourf(M);
 
-M = getFinalMatrix(A, jacobiSolution*-1);
+M = getFinalMatrix(problemMatrix, jacobiSolution*-1);
 # Calculate matrix M and plot it with contour
 contourf(M);
 
-M = getFinalMatrix(A, straightSolution*-1);
+M = getFinalMatrix(problemMatrix, straightSolution*-1);
 # Calculate matrix M and plot it with contour
 contourf(M);
 

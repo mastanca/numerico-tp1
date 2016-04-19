@@ -34,7 +34,6 @@ xJacobi = jacobi(A,v,tolerance);
 xGS = zeros(columns(A));
 xGS = gaussSeidel(A,v,tolerance);
 
-A
 straightSolution = transpose(xDirecto)
 jacobiSolution = (xJacobi)
 gaussSeidelSolution = transpose(xGS)
@@ -43,7 +42,7 @@ gaussSeidelSolution = transpose(xGS)
 # Remove the ; to get the figure
 M = getFinalMatrix(problemMatrix, straightSolution*-1);
 # Calculate matrix M and plot it with contour
-contourf(M);
+contourf(M)
 
 M = getFinalMatrix(problemMatrix, jacobiSolution*-1);
 # Calculate matrix M and plot it with contour

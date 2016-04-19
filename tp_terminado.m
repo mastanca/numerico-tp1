@@ -42,15 +42,15 @@ gaussSeidelSolution = transpose(xGS)
 # Remove the ; to get the figure
 M = getFinalMatrix(problemMatrix, straightSolution*-1);
 # Calculate matrix M and plot it with contour
-contourf(M)
+#contourf(M);
 
 M = getFinalMatrix(problemMatrix, jacobiSolution*-1);
 # Calculate matrix M and plot it with contour
-contourf(M);
+contourf(M)
 
 M = getFinalMatrix(problemMatrix, straightSolution*-1);
 # Calculate matrix M and plot it with contour
-contourf(M);
+#contourf(M);
 
 
 
